@@ -86,8 +86,9 @@ On May 20, 2025, Ms. Clara Benson was found deceased in Room 718 of the Grand Mo
 │ ▼ ▼ │
 │ 9. Zlib Decompression ────────────► 10. Timeline Creation │
 │ │
-└─────────────────────────────────────────────────────────────────
+└─────────────────────────────────────────────────────────────────┘
 
+text
 
 ---
 
@@ -211,8 +212,10 @@ DFIA299 - Capstone Project_Digital_Forensics_2025CFP7076_Atul_Paswan/
 │ └── styles_raw.xml # Raw XML styles
 │
 └── 💾 Disk Image
-   └──Mrs_Clara_Benson_case_image.001.txt
-   └── Mrs_Clara_Benson_case_image.001 # Main disk image 
+├── Mrs_Clara_Benson_case_image.001.txt
+└── Mrs_Clara_Benson_case_image.001 # Main disk image
+
+text
 
 ---
 
@@ -282,9 +285,12 @@ Decoded Binaries
 ▼
 Morse Message Extracted
 
+text
+
 ### Extracted Morse Message
 THE TRUTH IS IN ROOM 718
 
+text
 
 ### Spectrogram Analysis Results
 
@@ -301,10 +307,16 @@ THE TRUTH IS IN ROOM 718
 
 ### Base64 Decoded Confession
 
-**Original:**U29ycnsIEkgY291bGQgbm90IG1ha2UgdxAgbXkgbWluZcWgYnV0IGhlcmUgaXmgdGhIGFjdHvHbCBjb25mZXnzaW9uOiAKTWlIdCBtZSbhdCB0aGUgY2FzYSwgSSdtIHJ1WRSLg==
+**Original:**
+U29ycnsIEkgY291bGQgbm90IG1ha2UgdxAgbXkgbWluZcWgYnV0IGhlcmUgaXmgdGhIGFjdHvHbCBjb25mZXnzaW9uOiAKTWlIdCBtZSbhdCB0aGUgY2FzYSwgSSdtIHJ1WRSLg==
 
-**Decoded:**Sorry, I could not make up my mind but here is the confession:
-Meet me at the case, I'm Ready..."
+text
+
+**Decoded:**
+Sorry, I could not make up my mind but here is the confession:
+Meet me at the case, I'm Ready...
+
+text
 
 ### Steganography Extraction
 
@@ -350,23 +362,25 @@ Date & Time: May 20, 2025, 10:00 PM
 
 Plan Details:
 
-*Gain access to hotel room using master key card
+Gain access to hotel room using master key card
 
-*Disable security cameras prior to the event
+Disable security cameras prior to the event
 
-*Use silenced pistol to avoid noise
+Use silenced pistol to avoid noise
 
-*Leave no fingerprints or DNA evidence
+Leave no fingerprints or DNA evidence
 
-*Escape through fire exit on east wing
+Escape through fire exit on east wing
 
-*Additional Notes:
+Additional Notes:
 
-*Ensure all communication is encrypted
+Ensure all communication is encrypted
 
-*No one outside the team knows the plan
+No one outside the team knows the plan
 
-*Security systems disabled at 9:45 PM sharp
+Security systems disabled at 9:45 PM sharp
+
+text
 
 ### Accomplice Identification
 
@@ -423,19 +437,19 @@ Plan Details:
 ```bash
 # Kali Linux or Debian-based system
 sudo apt update
-
-# Clone Repository
-git clone https://github.com/yourusername/DFIA299-Capstone-Forensic-Project.git
-cd DFIA299-Capstone-Forensic-Project
-
-#Install Dependencies
+Clone Repository
+bash
+git clone https://github.com/atulak968/Grand-Monarch-Hotel-Forensic-Investigation.git
+cd Grand-Monarch-Hotel-Forensic-Investigation
+Install Dependencies
+bash
 # System tools
 sudo apt install -y sleuthkit sox libsox-fmt-all audacity minimodem multimon-ng steghide
 
 # Python dependencies
 pip install numpy scipy matplotlib scikit-image
-
-#Run Audio Analysis
+Run Audio Analysis
+bash
 # Generate spectrogram
 python spec.py
 
@@ -447,9 +461,9 @@ python inspect_cw.py
 
 # Detect pulses
 python pulse_detector.py
-
-# Decrypt Caesar Cipher
-# Python one-liner for shift 3
+Decrypt Caesar Cipher
+python
+# Python function for shift 3 decryption
 def caesar_decrypt(text, shift=3):
     result = ""
     for c in text:
@@ -462,24 +476,23 @@ def caesar_decrypt(text, shift=3):
         else:
             result += c
     return result
-
-# Extract Steganography
+Extract Steganography
+bash
 steghide extract -sf suspect_image.bmp -p monarch
-
-# Decompress Zlib Data
+Decompress Zlib Data
+python
 import zlib
 with open('zlib_data.bin', 'rb') as f:
     compressed = f.read()
 decompressed = zlib.decompress(compressed)
 with open('decompressed.bin', 'wb') as f:
     f.write(decompressed)
-
-
-# 📄 Report
+📄 Report
 The complete forensic report is available as:
-. 2025CFP7076__DFIA299 - Capstone Project_Digital_Forensics_Atul_Paswan.pdf
 
-# Report Sections
+2025CFP7076__DFIA299 - Capstone Project_Digital_Forensics_Atul_Paswan.pdf
+
+Report Sections
 ✅ Executive Summary
 
 ✅ Investigation Methodology
@@ -502,7 +515,7 @@ The complete forensic report is available as:
 
 ✅ Conclusion
 
-# 👤 Author
+👤 Author
 Detail	Information
 Name	Atul Paswan
 Student ID	2025CFP7076
@@ -510,8 +523,8 @@ Course	DFIA299 Capstone Project – Digital Forensics
 Institution	ICDFA
 Date	May 2025
 Email	atulak968@gmail.com
-
-# 🙏 Acknowledgments
+GitHub	atulak968
+🙏 Acknowledgments
 NIST DFIR Challenge – For the adapted disk image
 
 Sleuth Kit Developers – For forensic framework
@@ -522,7 +535,7 @@ Course Instructor – For project guidance
 
 DFIA299 Capstone – For comprehensive learning
 
-# ⭐ Show Your Support
+⭐ Show Your Support
 If you found this forensic investigation useful, please consider:
 
 ⭐ Starring this repository
@@ -531,16 +544,15 @@ If you found this forensic investigation useful, please consider:
 
 🔄 Sharing with fellow forensic students
 
-# 📧 Contact
+📧 Contact
 For questions or collaboration:
 
 GitHub Issues: Create an issue
 
 Email: atulak968@gmail.com
 
-# 
-🔍 "In digital forensics, every byte tells a story." 🔍
+🔍 Quote
+"In digital forensics, every byte tells a story."
 
 This investigation was conducted as part of the DFIA299 Capstone Project – Digital Forensics. All findings are based on the evidence analyzed and follow standard forensic best practices.
 
-  
