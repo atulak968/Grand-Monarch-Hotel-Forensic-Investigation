@@ -1,0 +1,29 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Thu Apr  2 15:47:43 2026
+Invocation: foremost -t all -i Mrs_Clara_Benson_case_image.001 -o recovered_audio_final 
+Output directory: /home/atul/campstoneproject/recovered_audio_final
+Configuration file: /etc/foremost.conf
+------------------------------------------------------------------
+File: Mrs_Clara_Benson_case_image.001
+Start: Thu Apr  2 15:47:43 2026
+Length: 100 MB (104857600 bytes)
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+0:	00011464.jpg 	       9 KB 	    5869568 	 
+1:	00011488.docx 	      36 KB 	    5881856 	 
+2:	00011576.zip 	      11 KB 	    5927200 	 
+3:	00011600.docx 	      15 KB 	    5939200 	 
+4:	00011483.png 	      287 B 	    5879559 	  (100 x 100)
+Finish: Thu Apr  2 15:47:46 2026
+
+5 FILES EXTRACTED
+	
+jpg:= 1
+zip:= 3
+png:= 1
+------------------------------------------------------------------
+
+Foremost finished at Thu Apr  2 15:47:46 2026

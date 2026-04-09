@@ -1,0 +1,29 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Tue Apr  7 15:05:55 2026
+Invocation: foremost -i Mrs_Clara_Benson_case_image.001 -o audio_carve 
+Output directory: /home/atul/campstoneproject/audio_carve
+Configuration file: /etc/foremost.conf
+------------------------------------------------------------------
+File: Mrs_Clara_Benson_case_image.001
+Start: Tue Apr  7 15:05:55 2026
+Length: 100 MB (104857600 bytes)
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+0:	00011464.jpg 	       9 KB 	    5869568 	 
+1:	00011488.docx 	      36 KB 	    5881856 	 
+2:	00011576.zip 	      11 KB 	    5927200 	 
+3:	00011600.docx 	      15 KB 	    5939200 	 
+4:	00011483.png 	      287 B 	    5879559 	  (100 x 100)
+Finish: Tue Apr  7 15:05:58 2026
+
+5 FILES EXTRACTED
+	
+jpg:= 1
+zip:= 3
+png:= 1
+------------------------------------------------------------------
+
+Foremost finished at Tue Apr  7 15:05:58 2026
