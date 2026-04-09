@@ -2,31 +2,33 @@
 
 ## Case: Death of Clara Benson (Room 718, May 20, 2025)
 
-![Status](https://img.shields.io/badge/Status-Completed-success)
-![Forensics](https://img.shields.io/badge/Digital_Forensics-Success-blue)
-![Tools](https://img.shields.io/badge/Tools-SleuthKit%20%7C%20Sox%20%7C%20Python-orange)
-![Course](https://img.shields.io/badge/Course-DFIA299_Capstone-red)
-![Student](https://img.shields.io/badge/Student-2025CFP7076_Atul_Paswan-green)
+| Badge | Status |
+|-------|--------|
+| ![Status](https://img.shields.io/badge/Status-Completed-success) | Investigation Complete |
+| ![Forensics](https://img.shields.io/badge/Digital_Forensics-Success-blue) | All Evidence Recovered |
+| ![Tools](https://img.shields.io/badge/Tools-SleuthKit%20%7C%20Sox%20%7C%20Python-orange) | Multiple Tools Used |
+| ![Course](https://img.shields.io/badge/Course-DFIA299_Capstone-red) | Final Project |
+| ![Student](https://img.shields.io/badge/Student-2025CFP7076_Atul_Paswan-green) | Author |
 
 ---
 
 ## 📌 Table of Contents
 
-- [Case Overview](#-case-overview)
-- [Key Findings](#-key-findings)
-- [Investigation Methodology](#-investigation-methodology)
-- [Tools Used](#-tools-used)
-- [Complete File Structure](#-complete-file-structure)
-- [Evidence Analysis](#-evidence-analysis)
-- [Audio Forensics Details](#-audio-forensics-details)
-- [Decoding & Decryption](#-decoding--decryption)
-- [Incident Reconstruction](#-incident-reconstruction)
-- [Timeline of Events](#-timeline-of-events)
-- [Chain of Custody](#-chain-of-custody)
-- [How to Reproduce](#-how-to-reproduce)
-- [Report](#-report)
-- [Author](#-author)
-- [License](#-license)
+1. [Case Overview](#case-overview)
+2. [Key Findings](#key-findings)
+3. [Investigation Methodology](#investigation-methodology)
+4. [Tools Used](#tools-used)
+5. [Complete File Structure](#complete-file-structure)
+6. [Evidence Analysis](#evidence-analysis)
+7. [Audio Forensics Details](#audio-forensics-details)
+8. [Decoding & Decryption](#decoding--decryption)
+9. [Incident Reconstruction](#incident-reconstruction)
+10. [Timeline of Events](#timeline-of-events)
+11. [Chain of Custody](#chain-of-custody)
+12. [How to Reproduce](#how-to-reproduce)
+13. [Report](#report)
+14. [Author](#author)
+15. [License](#license)
 
 ---
 
@@ -55,15 +57,15 @@ On May 20, 2025, Ms. Clara Benson was found deceased in Room 718 of the Grand Mo
 | # | Finding | Evidence Source |
 |---|---------|-----------------|
 | 1 | Marcus Langston confessed to murder | `confession.txt` (Base64 decoded) |
-| 2 | Hidden Morse message: `"THE TRUTH IS IN ROOM 718"` | Audio forensics (`clean.wav`) |
-| 3 | PGP Public Key recovered | `pgp_pubkey.bin`, `pgp_seckey1.bin`, `pgp_seckey2.bin` |
-| 4 | Encrypted archive found | `pex_archive.pgp`, `pex_archive.zip`, `pex_archive.gz` |
+| 2 | Hidden Morse message | `"THE TRUTH IS IN ROOM 718"` |
+| 3 | PGP Public Key recovered | `pgp_pubkey.bin`, `pgp_seckey1.bin` |
+| 4 | Encrypted archive found | `pex_archive.pgp`, `pex_archive.zip` |
 | 5 | Steganography extracted | `secret.txt`, `recovered_partner.jpg` |
-| 6 | OOK decoded binaries | `decoded_600_800_*.bin`, `decoded_1100_1300_*.bin` |
+| 6 | OOK decoded binaries | `decoded_600_800_*.bin` |
 | 7 | Zlib compressed data extracted | `zlib_data.bin`, `decompressed.bin` |
 | 8 | Hidden audio recovered | `hidden_audio.wav` |
 | 9 | PCAP file recovered | `pex_test.pcap` |
-| 10 | Transcript decoded | `transcript.txt` |
+| 10 | Accomplice identified | Hotel Security Guard |
 
 ---
 
@@ -104,9 +106,9 @@ text
 | **Steganography** | `steghide`, `zsteg` |
 | **PGP/GPG Analysis** | `gpg`, `pgpdump` |
 | **PCAP Analysis** | `tshark`, `wireshark` |
-| **Python Libraries** | NumPy, SciPy, Matplotlib, scikit-image, pyzlib |
+| **Python Libraries** | NumPy, SciPy, Matplotlib |
 | **Compression** | `gunzip`, `unzip`, `zlib` |
-| **Analysis & Visualization** | `xxd`, `strings`, `hexdump`, `binwalk` |
+| **Analysis & Visualization** | `xxd`, `strings`, `binwalk` |
 
 ---
 
@@ -118,102 +120,49 @@ DFIA299 - Capstone Project_Digital_Forensics_2025CFP7076_Atul_Paswan/
 ├── 🖼️ Evidence Images & Audio
 │ ├── suspect_image.wav # Original audio evidence
 │ ├── suspect_image.bmp # Original image evidence
-│ ├── clean.wav # Filtered audio (600-800 Hz bandpass)
+│ ├── clean.wav # Filtered audio (600-800 Hz)
 │ ├── hidden_audio.wav # Extracted hidden audio
-│ ├── filtered.wav # Bandpass filtered version
-│ ├── settings.wav # Additional audio evidence
-│ └── bw.png # Black & white processed image
+│ └── bw.png # Processed image
 │
 ├── 🎵 Audio Spectrograms
 │ ├── morse_spectrogram.png # Morse code visualization
-│ ├── full_spec.png # Full frequency spectrogram
-│ ├── envelope_check.png # Envelope detection plot
-│ └── final_clean.png # Final processed spectrogram
+│ ├── full_spec.png # Full spectrogram
+│ └── envelope_check.png # Envelope detection
 │
-├── 🔓 Decoded Outputs (OOK Demodulation)
+├── 🔓 Decoded Outputs
 │ ├── decoded_600_800_revFalse_scale0.9.bin
 │ ├── decoded_600_800_revFalse_scale1.0.bin
-│ ├── decoded_600_800_revFalse_scale1.1.bin
-│ ├── decoded_600_800_revTrue_scale0.9.bin
-│ ├── decoded_600_800_revTrue_scale1.0.bin
-│ ├── decoded_600_800_revTrue_scale1.1.bin
 │ ├── decoded_1100_1300_revFalse_scale0.9.bin
-│ ├── decoded_1100_1300_revFalse_scale1.0.bin
-│ ├── decoded_1100_1300_revFalse_scale1.1.bin
 │ └── decoded_data_1200Hz.bin
 │
 ├── 🔐 PGP & Encryption Analysis
 │ ├── pgp_pubkey.bin # PGP Public Key
-│ ├── pgp_seckey1.bin # PGP Secret Key 1
-│ ├── pgp_seckey2.bin # PGP Secret Key 2
-│ ├── key.bin # Extracted key material
-│ ├── key.txt # Key in text format
+│ ├── pgp_seckey1.bin # PGP Secret Key
 │ ├── pex_archive.pgp # PGP encrypted archive
-│ ├── pex_archive.zip # ZIP archive
-│ ├── pex_archive.gz # GZIP compressed
-│ ├── pex.bin # Raw PGP binary
-│ ├── pex_test.gz # Test GZIP file
-│ └── pex_test.zip # Test ZIP file
-│
-├── 📦 Decompressed & Extracted Data
-│ ├── zlib_data.bin # Raw zlib compressed data
-│ ├── decompressed.bin # Decompressed output
-│ ├── decompressed_153.bin # Decompressed at offset 153
-│ ├── decompressed_at_offset_153.bin # Alternative decompression
-│ ├── extracted_zlib.bin # Extracted zlib stream
-│ ├── transcript.bin # Binary transcript
-│ ├── transcript.txt # Decoded transcript text
-│ ├── hidden_data.b64 # Base64 hidden data
-│ └── msb_combined_all.bin # MSB combined extraction
-│
-├── 📂 Offset Analysis Files
-│ ├── offset_718.bin # Data at offset 718
-│ ├── offset_718718.bin # Data at offset 718718
-│ ├── offset_945.bin # Data at offset 945
-│ └── offset_94545.bin # Data at offset 94545
+│ └── pex_archive.zip # ZIP archive
 │
 ├── 📜 Recovered Evidence
-│ ├── confession.txt # Decoded confession (Base64)
-│ ├── secret.txt # Steganography extracted text
-│ ├── recovered_partner.jpg # Recovered image of accomplice
-│ ├── final_bmp/ # Recovered BMP images
-│ ├── recovered_audio_final/ # Final recovered audio files
-│ ├── recovered_files/ # All carved files
-│ ├── audio_carve/ # Audio carving output
-│ ├── audio_carve_all/ # Complete audio carving
-│ ├── carved_output/ # General carving output
-│ ├── evidence_files/ # Organized evidence
-│ └── unallocated_space.bin # Unallocated space dump
+│ ├── confession.txt # Base64 decoded confession
+│ ├── secret.txt # Steganography extracted
+│ ├── recovered_partner.jpg # Accomplice image
+│ └── recovered_files/ # All carved files
 │
 ├── 🐍 Python Analysis Scripts
-│ ├── decode_cw.py # Morse code decoder
-│ ├── decode_morse.py # Alternative Morse decoder
-│ ├── decode_ook.py # OOK demodulation main
-│ ├── inspect_cw.py # CW signal inspection
-│ ├── iv.py # Interval analysis
-│ ├── ev.py # Envelope validation
+│ ├── decode_ook.py # OOK demodulation
 │ ├── pulse_detector.py # Burst detection
 │ ├── spec.py # Spectrogram generator
-│ ├── view_spec.py # Spectrogram viewer
-│ └── raw_bits.txt # Raw bit extraction output
+│ └── view_spec.py # Spectrogram viewer
 │
 ├── 📊 Analysis Outputs
-│ ├── bodyfile.txt # Sleuth Kit bodyfile
 │ ├── timeline.csv # Timeline of events
-│ ├── output.txt # General output log
-│ ├── pex_test.pcap # Network capture file
-│ └── settings.dat # Settings data
+│ └── bodyfile.txt # Sleuth Kit bodyfile
 │
 ├── 📸 Screenshots/
 │ └── [All forensic procedure screenshots]
 │
-├── 📄 Documentation Files
-│ ├── docProps/ # Document properties
-│ └── styles_raw.xml # Raw XML styles
-│
 └── 💾 Disk Image
 ├── Mrs_Clara_Benson_case_image.001.txt
-└── Mrs_Clara_Benson_case_image.001 # Main disk image
+└── Mrs_Clara_Benson_case_image.001
 
 text
 
@@ -230,8 +179,8 @@ text
 
 ### 2. Partition Layout (from `mmls`)
 
-| Slot | Start (sector) | End | Length | Description |
-|------|----------------|-----|--------|-------------|
+| Slot | Start | End | Length | Description |
+|------|-------|-----|--------|-------------|
 | 00 | 0 | 0 | 1 | Primary Table |
 | 01 | 0 | 127 | 128 | Unallocated |
 | 02 | 128 | 1,987,763 | 1,987,636 | NTFS (0×07) |
@@ -244,9 +193,7 @@ text
 | `murder_plan.docx` | Recovered (scrambled) | File carving |
 | `Encrypted Letter.docx` | Recovered | File carving |
 | `secret.txt` | Extracted | Steganography (passphrase: `monarch`) |
-| `suspect_image.wav` | Recovered | Direct extraction |
 | `pgp_pubkey.bin` | Recovered | PGP analysis |
-| `pex_archive.pgp` | Recovered | Encryption analysis |
 | `recovered_partner.jpg` | Recovered | Image carving |
 
 ---
@@ -265,7 +212,7 @@ clean.wav
 ▼
 Spectrogram Analysis
 │
-├──► morse_spectrogram.png (vertical lines below 500 Hz)
+├──► morse_spectrogram.png
 │
 ▼
 Envelope Detection (Python)
@@ -273,14 +220,9 @@ Envelope Detection (Python)
 ▼
 OOK Demodulation
 │
-├──► 600-800 Hz bandpass
-├──► 1100-1300 Hz bandpass
 ├──► Bit period: 13-15 ms
 ├──► Scale: 0.9, 1.0, 1.1
 └──► Bit order: normal & reversed
-│
-▼
-Decoded Binaries
 │
 ▼
 Morse Message Extracted
@@ -298,7 +240,6 @@ text
 |-------------|----------------|
 | Vertical lines below 500 Hz | OOK bursts (on-off keying) |
 | Burst duration ~5 ms | High-speed data (200 baud) |
-| Gaps: 0.0004s to 5.66s | Variable spacing (data packets) |
 | Carriers at 630 Hz, 720 Hz, 1200 Hz | Multiple frequency components |
 
 ---
@@ -331,8 +272,8 @@ text
 
 ### Caesar Cipher Decryption (Shift 3)
 
-| Original Scrambled | Decrypted |
-|-------------------|-----------|
+| Original | Decrypted |
+|----------|-----------|
 | `murder_plan.docx` | Full murder plan outline |
 | `Encrypted Letter.docx` | Cipher mapping table |
 
@@ -342,14 +283,6 @@ text
 |------|------|--------|
 | `pgp_pubkey.bin` | Public Key | Valid |
 | `pgp_seckey1.bin` | Secret Key | Encrypted |
-| `pgp_seckey2.bin` | Secret Key | Encrypted |
-
-### Zlib Decompression
-
-| Input | Output | Method |
-|-------|--------|--------|
-| `zlib_data.bin` | `decompressed.bin` | Python zlib |
-| `extracted_zlib.bin` | `decompressed_153.bin` | Offset 153 |
 
 ---
 
@@ -362,9 +295,9 @@ Date & Time: May 20, 2025, 10:00 PM
 
 Plan Details:
 
-Gain access to hotel room using master key card
+Gain access using master key card
 
-Disable security cameras prior to the event
+Disable security cameras prior to event
 
 Use silenced pistol to avoid noise
 
@@ -374,11 +307,9 @@ Escape through fire exit on east wing
 
 Additional Notes:
 
-Ensure all communication is encrypted
+Security systems disabled at 9:45 PM sharp
 
 No one outside the team knows the plan
-
-Security systems disabled at 9:45 PM sharp
 
 text
 
@@ -400,18 +331,17 @@ text
 
 | Time | Event | Evidence Source |
 |------|-------|-----------------|
-| 9:45 PM | Security systems disabled | Whispered audio + `settings.dat` |
-| 9:50 PM | Langston enters Room 718 | Access logs (recovered) |
-| 10:00 PM | Clara Benson shot | Murder plan + `confession.txt` |
-| 10:05 PM | Langston escapes via east wing | Murder plan |
-| 10:15 PM | Security systems re-enabled | System logs (`settings.dat`) |
+| 9:45 PM | Security systems disabled | Whispered audio |
+| 9:50 PM | Langston enters Room 718 | Access logs |
+| 10:00 PM | Clara Benson shot | Murder plan |
+| 10:05 PM | Langston escapes | Murder plan |
 | 10:30 PM | Body discovered | Case file |
 
 ### May 21, 2025
 
 | Time | Event |
 |------|-------|
-| 09:00 AM | USB device recovered from Langston |
+| 09:00 AM | USB device recovered |
 | 11:30 AM | Disk imaging completed |
 | 02:00 PM | Forensic analysis began |
 
@@ -419,14 +349,13 @@ text
 
 ## 🔗 Chain of Custody
 
-| Item # | Description | Received From | Date/Time | Transferred To | Purpose |
-|--------|-------------|---------------|-----------|----------------|---------|
-| 1 | USB disk (physical) | Crime scene | May 21, 2025 – 09:00 | Forensic Lab | Imaging |
-| 2 | `Mrs_Clara_Benson_case_image.001` | Imaging process | May 21, 2025 – 11:30 | Investigator | Analysis |
-| 3 | `suspect_image.wav` | Carving | May 22, 2025 – 10:00 | Audio Lab | Forensics |
-| 4 | `clean.wav` | Filtered | May 22, 2025 – 14:00 | Analysis | OOK decode |
-| 5 | Decrypted files | Python scripts | May 23-25, 2025 | Evidence locker | Preservation |
-| 6 | Final report | Compiled | May 26, 2025 | Instructor | Submission |
+| Item | Description | From | To | Purpose |
+|------|-------------|------|-----|---------|
+| 1 | USB disk (physical) | Crime scene | Forensic Lab | Imaging |
+| 2 | Disk image | Imaging process | Investigator | Analysis |
+| 3 | Audio files | Carving | Audio Lab | Forensics |
+| 4 | Decrypted files | Python scripts | Evidence locker | Preservation |
+| 5 | Final report | Compiled | Instructor | Submission |
 
 ---
 
@@ -435,7 +364,6 @@ text
 ### Prerequisites
 
 ```bash
-# Kali Linux or Debian-based system
 sudo apt update
 Clone Repository
 bash
@@ -444,26 +372,20 @@ cd Grand-Monarch-Hotel-Forensic-Investigation
 Install Dependencies
 bash
 # System tools
-sudo apt install -y sleuthkit sox libsox-fmt-all audacity minimodem multimon-ng steghide
+sudo apt install -y sleuthkit sox audacity steghide
 
 # Python dependencies
-pip install numpy scipy matplotlib scikit-image
+pip install numpy scipy matplotlib
 Run Audio Analysis
 bash
-# Generate spectrogram
 python spec.py
-
-# Run OOK decoder
 python decode_ook.py
-
-# Inspect envelope
-python inspect_cw.py
-
-# Detect pulses
 python pulse_detector.py
-Decrypt Caesar Cipher
+Extract Steganography
+bash
+steghide extract -sf suspect_image.bmp -p monarch
+Caesar Cipher Decryption (Python)
 python
-# Python function for shift 3 decryption
 def caesar_decrypt(text, shift=3):
     result = ""
     for c in text:
@@ -476,9 +398,6 @@ def caesar_decrypt(text, shift=3):
         else:
             result += c
     return result
-Extract Steganography
-bash
-steghide extract -sf suspect_image.bmp -p monarch
 Decompress Zlib Data
 python
 import zlib
@@ -490,8 +409,8 @@ with open('decompressed.bin', 'wb') as f:
 📄 Report
 The complete forensic report is available as:
 
+text
 2025CFP7076__DFIA299 - Capstone Project_Digital_Forensics_Atul_Paswan.pdf
-
 Report Sections
 ✅ Executive Summary
 
@@ -509,7 +428,7 @@ Report Sections
 
 ✅ Timeline of Events
 
-✅ Chain of Custody Documentation
+✅ Chain of Custody
 
 ✅ Recommendations
 
@@ -519,7 +438,7 @@ Report Sections
 Detail	Information
 Name	Atul Paswan
 Student ID	2025CFP7076
-Course	DFIA299 Capstone Project – Digital Forensics
+Course	DFIA299 Capstone – Digital Forensics
 Institution	ICDFA
 Date	May 2025
 Email	atulak968@gmail.com
@@ -533,26 +452,22 @@ Open Source Community – For Python libraries
 
 Course Instructor – For project guidance
 
-DFIA299 Capstone – For comprehensive learning
-
 ⭐ Show Your Support
-If you found this forensic investigation useful, please consider:
+⭐ Star this repository
 
-⭐ Starring this repository
+🍴 Fork for your own learning
 
-🍴 Forking for your own learning
-
-🔄 Sharing with fellow forensic students
+🔄 Share with fellow students
 
 📧 Contact
-For questions or collaboration:
-
 GitHub Issues: Create an issue
 
 Email: atulak968@gmail.com
 
+📜 License
+MIT License
+
 🔍 Quote
 "In digital forensics, every byte tells a story."
 
-This investigation was conducted as part of the DFIA299 Capstone Project – Digital Forensics. All findings are based on the evidence analyzed and follow standard forensic best practices.
-
+This investigation was conducted as part of the DFIA299 Capstone Project – Digital Forensics. All findings follow standard forensic best practices.
